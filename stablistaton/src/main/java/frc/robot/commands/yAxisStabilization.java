@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import frc.robot.sensors.RomiGyro;
 import frc.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -14,6 +15,7 @@ public class yAxisStabilization extends CommandBase {
   private final double m_speed;
   private final boolean m_stable;
   private int m_Tim;
+  private final RomiGyro m_gyro = new RomiGyro();
   /**
    * Creates a new DriveDistance. This command will drive your your robot for a desired distance at
    * a desired speed.
@@ -41,7 +43,11 @@ public class yAxisStabilization extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+
     m_drive.arcadeDrive(m_speed, 0);
+    if (m) {
+      
+    }
   }
 
   // Called once the command ends or is interrupted.
