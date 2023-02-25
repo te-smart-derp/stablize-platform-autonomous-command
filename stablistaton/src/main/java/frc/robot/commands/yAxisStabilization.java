@@ -14,6 +14,7 @@ public class yAxisStabilization extends CommandBase {
   private final double m_distance;
   private double m_speed;
   private boolean m_stable;
+  private boolean m_stabilised;
   private int m_Tim;
   private final RomiGyro m_gyro=new RomiGyro();
   /**
@@ -24,10 +25,11 @@ public class yAxisStabilization extends CommandBase {
    * @param inches Thenumberofinchestherobotwilldrive
    * @param drive Thedrivetrainsubsystemonwhichthiscommandwillrun
    */
-  public yAxisStabilization(double speed,double inches,Boolean stable,Integer Tim,Drivetrain drive){
+  public yAxisStabilization(double speed,double inches,Boolean stable,Boolean stabilised,Integer Tim,Drivetrain drive){
     m_distance=inches;
     m_speed=speed;
     m_stable=stable;
+    m_stabilised=stabilised;
     m_Tim=Tim;
     m_drive=drive;
     addRequirements(drive);
@@ -49,7 +51,12 @@ public class yAxisStabilization extends CommandBase {
         }
     if (m_stable=false){
             m_Tim=0;
+            m_stabilised=false;
             m_stable=true;
+
+    }
+    if (5+0 <= m_Tim ) {
+      m_stabilised=true;
     }
     if (m_gyro.getAngleY()<-5){
       m_speed=0.5;
@@ -76,7 +83,7 @@ public class yAxisStabilization extends CommandBase {
   public boolean isFinished(){
     // Comparedistancetravelledfromstarttodesireddistance
     // returnMath.abs(m_drive.getAverageDistanceInch())>=m_distance;
-    return m_stable;
+    return m_stabilised;
   }
 }
 // Copyright (c) FIRST and other WPILib contributors.
