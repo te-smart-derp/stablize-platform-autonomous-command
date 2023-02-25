@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class yAxisStabilization extends CommandBase {
   private final Drivetrain m_drive;
-  private final double m_distance;
+  // private final double m_distance;
   private double m_speed;
   private boolean m_stable;
   private boolean m_stabilised;
@@ -25,8 +25,8 @@ public class yAxisStabilization extends CommandBase {
    * @param inches Thenumberofinchestherobotwilldrive
    * @param drive Thedrivetrainsubsystemonwhichthiscommandwillrun
    */
-  public yAxisStabilization(double speed,double inches,Boolean stable,Boolean stabilised,Integer Tim,Drivetrain drive){
-    m_distance=inches;
+  public yAxisStabilization(double speed,Boolean stable,Boolean stabilised,Integer Tim,Drivetrain drive){
+    // m_distance=inches;
     m_speed=speed;
     m_stable=stable;
     m_stabilised=stabilised;

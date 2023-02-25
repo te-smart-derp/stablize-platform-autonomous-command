@@ -77,12 +77,12 @@ private double zero = 0;
       m_poleWrist = poleWrist;
       m_poleTilt = poleTilt;
   //  m_pidController.setP(0);
-   // m_pidController.setI(0);
-    //m_pidController.setD(0);
+  //  m_pidController.setI(0);
+  //   m_pidController.setD(0);
     //m_pidController.set
   }
   //pass a value of 1 to open the claw, a -1 to close the claw, or a 0 to disable the claw 
-public void arcadeDrive(Double double1, Double double2, Double double3) {
+public void arcadeDrive(Double double1, Double double2, Double double3, Double double4, Double double5, Double double6) {
    m_poleClaw = double1;
    m_poleWrist = double2;
    m_poleTilt = double3;
@@ -131,12 +131,12 @@ public void tilt (double pole3) {
   if(pole3==0){m_tilt.set(Value.kOff);}
   if(pole3==-1){m_tilt.set(Value.kReverse);}
     } 
-/* 
-    public void pivit (double angale) {
-      m_pidController.setReference(angale/365, CANSparkMax.ControlType.kPosition);
-    }
 
-    public double encoder() {
+    // public void pivit (double angale) {
+    //   m_pidController.setReference(angale/365, CANSparkMax.ControlType.kPosition);
+    // }
+
+/*    public double encoder() {
       return m_encoder.getPosition()*100-zero;
     }
 public boolean limit(){
