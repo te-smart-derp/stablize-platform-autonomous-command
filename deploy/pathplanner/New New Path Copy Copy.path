@@ -303,23 +303,8 @@
       }
     }
   ],
-  "maxVelocity": 4.0,
-  "maxAcceleration": 3.15,
-  "isReversed": false,
-  "markers": [
-    {
-      "position": 0.0,
-      "names": [
-        "reverse 1",
-        "activate tabilisation cod"
-      ]
-    },
-    {
-      "position": 9.75,
-      "names": [
-        "event",
-        "activate tabilisation cod"
-      ]
-    }
-  ]
+  "maxVelocity": 400000000000.0,
+  "maxAcceleration": 99999999.0,
+  "isReversed": null,
+  "markers": []
 }
